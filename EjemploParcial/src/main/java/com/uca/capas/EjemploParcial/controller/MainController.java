@@ -41,8 +41,7 @@ public class MainController {
 	
 	@RequestMapping("/guardarCont")
 	public ModelAndView guardarCont(@ModelAttribute Contribuyente c) {
-		c.setFingreso(new Date());
-		c.setImportancia(importanciaService.findOne(c.getCimportancia()));
+		
 		contribuyenteService.save(c);
 		
 		ModelAndView mav = new ModelAndView();
